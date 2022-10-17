@@ -8,5 +8,5 @@ class FakeMusicExtractorServiceAdapter(MusicExtractorService):
 
 
 @pytest.fixture
-def music_extractor():
+def fake_music_extractor():
     return FakeMusicExtractorServiceAdapter()
