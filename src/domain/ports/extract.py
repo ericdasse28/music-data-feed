@@ -1,10 +1,9 @@
-from abc import ABC, abstractmethod
-from typing import List
-
-from domain.model.tracks import Track
+from abc import ABCMeta, abstractmethod
 
 
-class MusicExtractorService(ABC):
+class MusicExtractorService:
+    __metaclass__ = ABCMeta
+
     @abstractmethod
-    def get_recently_played_tracks(self) -> List[Track]:
-        ...
+    def get_recently_played_tracks(self, number_of_tracks):
+        pass
