@@ -8,7 +8,9 @@ Le repo en question peut être par exemple l'API de Spotify d'où on récupérer
 
 
 ## Extraction (Extract)
-Le système contacte l'API de Spotify (ou d'un autre logiciel de streaming audio) pour récupérer les 100 dernières chansons écoutées
+Le système contacte l'API de Spotify (ou d'un autre logiciel de streaming audio) pour récupérer les 100 dernières chansons écoutées.
+
+Le code concernant l'extraction se trouve dans le répertoire `extractor`.
 
 ## Transformation (Transform)
 Le système met en forme ces informations et les répartit en pistes, auteurs et genres
