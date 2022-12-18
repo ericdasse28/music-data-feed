@@ -17,7 +17,7 @@ class SongList:
         self._song_list = []
 
     def add(self, song):
-        self._song_list = [Song("Mon Everest", "Blablablablabla", ["Pop-Rap", "pop"])]
+        self._song_list = [song]
 
     def __contains__(self, song):
         return song in self._song_list
