@@ -1,5 +1,8 @@
+from typing import Callable
+
+
 class MusicFinder:
-    def __init__(self, music_finding_method: function):
+    def __init__(self, music_finding_method: Callable):
         self.music_finding_method = music_finding_method
 
     def find_music(self, number_of_songs: int):
