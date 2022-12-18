@@ -15,6 +15,7 @@ class Song:
 class SongList:
     def __init__(self):
         self._song_list = []
+        self.is_empty = True
 
     def add(self, song):
         self._song_list = [song]

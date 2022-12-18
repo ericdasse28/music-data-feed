@@ -53,3 +53,9 @@ def test_can_add_a_song_to_an_empty_song_list(song_title, song_lyrics, song_genr
 
     assert len(song_list._song_list) == former_song_list_length + 1
     assert song in song_list
+
+
+def test_song_list_is_empty_property_returns_true_when_song_list_is_empty():
+    song_list = SongList()
+
+    assert song_list.is_empty
