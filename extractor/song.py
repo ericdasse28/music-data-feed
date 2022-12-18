@@ -22,14 +22,17 @@ class SongList:
     def __init__(self, song_list=None):
         if not song_list:
             self._song_list = []
-        elif isinstance(song_list, list) and all(
-            isinstance(element, Song) for element in song_list
-        ):
+        elif self._is_list_of_songs(song_list):
             self._song_list = song_list
         else:
             raise TypeError(
                 "SongList optional argument should be a list of objects of type Song"
             )
+
+    def _is_list_of_songs(self, song_list):
+        return isinstance(song_list, list) and all(
+            isinstance(element, Song) for element in song_list
+        )
 
     @property
     def is_empty(self):
