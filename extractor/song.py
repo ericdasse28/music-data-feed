@@ -11,6 +11,9 @@ class Song:
             and self.genres == other_song.genres
         )
 
+    def __str__(self) -> str:
+        return f"Song(title={self.title}, lyrics={self.lyrics:15}, genres={self.genres}"
+
 
 class SongList:
     def __init__(self):
