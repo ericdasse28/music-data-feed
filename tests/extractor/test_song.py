@@ -47,11 +47,10 @@ def test_can_create_a_song(song_title, song_lyrics, song_genres):
 def test_can_add_a_song_to_an_empty_song_list(song_title, song_lyrics, song_genres):
     song = Song(title=song_title, lyrics=song_lyrics, genres=song_genres)
     song_list = SongList()
-    former_song_list_length = len(song_list._song_list)
 
     song_list.add(song)
 
-    assert len(song_list._song_list) == former_song_list_length + 1
+    assert len(song_list) == 1
     assert song in song_list
 
 
