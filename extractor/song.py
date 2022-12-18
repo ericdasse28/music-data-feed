@@ -28,5 +28,8 @@ class SongList:
     def __contains__(self, song):
         return song in self._song_list
 
+    def __str__(self) -> str:
+        return str(self._song_list)
+
 
 # TODO: MusicFinder
