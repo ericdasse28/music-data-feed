@@ -63,11 +63,11 @@ def test_can_add_a_song_to_a_song_list_that_already_contains_songs(
         glorious,
         closer,
     ]
-    former_song_list_length = len(song_list._song_list)
+    former_song_list_length = len(song_list)
 
     song_list.add(mon_everest)
 
-    assert len(song_list._song_list) == former_song_list_length + 1
+    assert len(song_list) == former_song_list_length + 1
     assert mon_everest in song_list
 
 
