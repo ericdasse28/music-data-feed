@@ -16,8 +16,11 @@ class Song:
 
 
 class SongList:
-    def __init__(self):
-        self._song_list = []
+    def __init__(self, song_list=None):
+        if not song_list:
+            self._song_list = []
+        else:
+            self._song_list = song_list
 
     @property
     def is_empty(self):
@@ -34,5 +37,5 @@ class SongList:
     def __str__(self) -> str:
         return str(self._song_list)
 
-
-# TODO: MusicFinder
+    def __len__(self):
+        return len(self._song_list)
