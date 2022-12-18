@@ -23,7 +23,7 @@ class SongList:
         return False
 
     def add(self, song):
-        self._song_list = [song]
+        self._song_list.append(song)
 
     def __contains__(self, song):
         return song in self._song_list

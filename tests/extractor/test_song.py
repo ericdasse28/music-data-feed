@@ -55,6 +55,33 @@ def test_can_add_a_song_to_an_empty_song_list(song_title, song_lyrics, song_genr
     assert song in song_list
 
 
+def test_can_add_a_song_to_a_song_list_that_already_contains_songs():
+    song = Song(
+        title="Mon Everest",
+        lyrics="This time I know for who I am",
+        genres=["Pop-rap", "pop"],
+    )
+    song_list = SongList()
+    song_list._song_list = [
+        Song(
+            title="Glorious",
+            lyrics="I made through the darkest parts of the night",
+            genres=["Hip-Hop/Rap"],
+        ),
+        Song(
+            title="Closer",
+            lyrics="We ain't ever getting older",
+            genres=["Future bass", "pop"],
+        ),
+    ]
+    former_song_list_length = len(song_list._song_list)
+
+    song_list.add(song)
+
+    assert len(song_list._song_list) == former_song_list_length + 1
+    assert song in song_list
+
+
 def test_song_list_is_empty_property_returns_true_when_song_list_is_empty():
     song_list = SongList()
 
