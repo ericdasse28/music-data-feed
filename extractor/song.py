@@ -1,5 +1,8 @@
+from typing import List
+
+
 class Song:
-    def __init__(self, title, lyrics, genres):
+    def __init__(self, title: str, lyrics: str, genres: List[str]):
         self.title = title
         self.lyrics = lyrics
         self.genres = genres
@@ -19,8 +22,14 @@ class SongList:
     def __init__(self, song_list=None):
         if not song_list:
             self._song_list = []
-        else:
+        elif isinstance(song_list, list) and all(
+            isinstance(element, Song) for element in song_list
+        ):
             self._song_list = song_list
+        else:
+            raise TypeError(
+                "SongList optional argument should be a list of objects of type Song"
+            )
 
     @property
     def is_empty(self):
@@ -28,10 +37,10 @@ class SongList:
             return True
         return False
 
-    def add(self, song):
+    def add(self, song: Song):
         self._song_list.append(song)
 
-    def __contains__(self, song):
+    def __contains__(self, song: Song):
         return song in self._song_list
 
     def __str__(self) -> str:
