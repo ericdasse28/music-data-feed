@@ -15,7 +15,12 @@ class Song:
 class SongList:
     def __init__(self):
         self._song_list = []
-        self.is_empty = True
+
+    @property
+    def is_empty(self):
+        if not self._song_list:
+            return True
+        return False
 
     def add(self, song):
         self._song_list = [song]

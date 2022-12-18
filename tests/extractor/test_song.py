@@ -59,3 +59,16 @@ def test_song_list_is_empty_property_returns_true_when_song_list_is_empty():
     song_list = SongList()
 
     assert song_list.is_empty
+
+
+def test_song_list_is_empty_property_returns_false_when_song_list_is_not_empty():
+    song_list = SongList()
+    song_list._song_list = [
+        Song(
+            title="Determinate",
+            lyrics="Determinate, determinate, ...",
+            genres=["Pop punk"],
+        )
+    ]
+
+    assert not song_list.is_empty
